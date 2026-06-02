@@ -34,3 +34,7 @@ console.log(arr6);
 // 結合
 const arr7 = [...arr4, ...arr5];
 console.log(arr7);
+
+const arr8 = arr4;
+arr8[0] = 100;
+console.log(arr4);

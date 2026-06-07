@@ -1,7 +1,11 @@
 import { useState, useCallback, useMemo } from 'react'
-import { ChildArea } from './ChildArea'
-import { InlineStyle } from './InlineStyle'
-import './App.css'
+import { ChildArea } from './components/ChildArea'
+import { InlineStyle } from './components/InlineStyle'
+import './App.scss'
+import { CssModules } from './components/CssModules'
+import { StyledJsx } from './components/StyledJsx'
+import { StyledComponents } from './components/StyledComponents'
+import { Emotion } from './components/Emotion'
 
 function App() {
   const [text, setText] = useState('')
@@ -30,6 +34,10 @@ function App() {
         <button onClick={onClickOpen}>表示</button>
         <ChildArea open={open} onClickClose={onClickClose} /> 
         <InlineStyle />
+        <CssModules />
+        <StyledJsx />
+        <StyledComponents />
+        <Emotion />
       </div>
     </>
   )

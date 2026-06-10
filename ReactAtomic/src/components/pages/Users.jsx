@@ -5,6 +5,8 @@ import { useLocation } from "react-router-dom"
 import { SecondaryButton } from "../atoms/button/SecondaryButton"
 import { useContext } from "react"
 import { UserContext } from "../../providers/UserProvider"
+// import { useRecoilState } from "recoil"
+// import { userState } from "../../store/userState"
 
 export const Users = () => {
 
@@ -24,6 +26,7 @@ export const Users = () => {
     const { state } = useLocation();
     const isAdmin = state ? state.isAdmin : false;
     const {userInfo, setUserInfo} = useContext(UserContext)
+    // const [userInfo, setUserInfo] = useRecoilState(userState)
     const onClickSwitch = () => setUserInfo({ isAdmin: !userInfo.isAdmin })
     return (
         <SContainer>

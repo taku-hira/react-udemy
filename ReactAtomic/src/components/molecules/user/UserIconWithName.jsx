@@ -1,7 +1,11 @@
 import styled from "styled-components"
+import React, { memo, useContext } from "react"
+import { UserContext } from "../../../providers/UserProvider"
 
-export const UserIconWithName = (props) => {
-    const { name, image, isAdmin } = props
+export const UserIconWithName = memo((props) => {
+    const { name, image } = props
+    const { userInfo } = useContext(UserContext)
+    const isAdmin = userInfo ? userInfo.isAdmin : false;
     return (
         <SContainer>
             <Simg height={160} width={160} src={image} alt="user.name" />
@@ -9,7 +13,7 @@ export const UserIconWithName = (props) => {
             {isAdmin && <SEdit>編集</SEdit>}
         </SContainer>
     )
-}
+})
 
 const SContainer = styled.div`
     text-align: center;
